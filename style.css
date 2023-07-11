@@ -1,0 +1,265 @@
+body{
+    height: 100svh;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    font-family: 'Bodoni Moda', serif;
+
+    /* Background-image */
+    background-image: url(./light-golden-stairs\ \(1\).jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -80px ;
+}
+
+
+/*  */
+
+
+
+/* Heading Styles */
+.header{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+.book-icon{
+    width: 5rem;
+    height: 5rem;
+    vertical-align:sub;
+    position: relative;
+    top: 7px;
+}
+
+
+/* left container */
+.left-container{
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.left-container{
+    padding-left: 2rem;
+}
+.form-row{
+    padding: 1rem 0;
+}
+.form-row > label{
+    display: inline-block;
+    width: min(200px,25%);
+
+    text-align: right;
+    padding-right: .5rem;
+    /* border: solid; */
+
+    font-size: 1.1rem;
+}
+.form-row > input{
+    width: min(250px,80%);
+    padding: .5rem;
+
+    opacity: 0.7;
+    outline:none;
+}
+.form-row > button{
+    background-image: linear-gradient(to right,#fee6bc,#947c65);
+    width: min(270px,80%);
+    padding: .7rem;
+
+    /* border: solid 1px #ceb69b; */
+    border: none;
+
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.form-row > button:hover{
+    cursor:pointer;
+    background-image: linear-gradient(to right,#e2cda7,#89725d);
+}
+.left-container > p{
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+
+/* right-container */
+.right-container{
+    flex-basis: max(25%,250px);
+    /* flex-shrink: 2; */
+
+    /* background-colors*/
+
+    /* background-color: #e5c7a6; */
+    /* background-color: #e0bf9c; */
+    background-color: #e1d1bc;
+    /* background-color: #b49f86; */
+    /* background-color: #d7c2b1; */
+}
+.right-container{
+    position: relative;
+}
+.display-container{
+    /* absolute value for prevent resizing */
+    height: 550px;
+    /* width: min(370px,100%); */
+    width: clamp(300px,370px,100%);
+}
+.display-container{
+    position: absolute;
+    background-color: white;
+    border-radius: 16px;
+    left: -12.5vw;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    box-shadow: 1px 1px 5px  #c1c1c1;
+}
+.display-container > .preview{
+    position: relative;
+    overflow:visible;
+    /* border: none; */
+}
+img{
+    width: 500px;
+    position: relative;
+    left: -80px;
+}
+.quote{
+    margin-top: 1.5rem;
+}
+.quote > cite{
+    display: inline-block;
+    padding-top: .8rem;
+}
+
+
+
+
+/* book Items */
+.display-container > div {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    /* overflow: hidden; */
+    color:black;
+    border-radius: 16px;
+    border-collapse: collapse;
+}
+.display-container > .bookItem{
+    background-image: linear-gradient(to right ,#f9f7eb, #e1d1bc);
+    width: 90%;
+    margin: .6rem auto;
+    padding: .5rem;
+    margin-bottom: .8rem;
+
+    display: flex;
+    border: none;
+    box-shadow: 1px 1px 8px #b3956a;
+
+}
+.bookInfoContainer{
+    flex: 1;
+}
+.bookButtonContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.bookButtonContainer > button{
+    padding: .5rem;
+    border: none;
+    width: 150px;
+    background-color:#f9f7eb;
+}
+.bookButtonContainer  > button:hover{
+    cursor: pointer;
+    background-color:#ebebe9;
+}
+.display-container > .readIndicate{
+    background-image: linear-gradient(to right ,#f9f7eb, #a99c8a);
+}
+.readIndicate > .bookInfoContainer{
+    text-decoration: line-through;
+}
+
+
+/* Media   Queries */
+
+@media only screen and (max-width:850px){
+    body{
+        background-position: -250px;
+    }
+   .form-row > label{
+    display: block;
+    text-align: start;
+    width: 100%;
+   }
+   img{
+    width: 400px;
+    left: -100px;
+   }
+   
+}
+
+@media only screen and (max-width:450px){
+    body{
+        display: block;
+        background-position: 0;
+        background-image: url(./light-golden-stairs\ \(2\).jpeg);
+        background-repeat: no-repeat;
+        background-position: contain;
+    }
+    .header{
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .book-icon{
+        width: 2rem;
+        height: 3rem;
+        vertical-align:sub;
+    }
+    .form-row{
+        padding: .5rem 0;
+    }
+    .left-container > p{
+        font-size: 1rem;
+    }
+    .right-container{
+        position: static;
+        background-color: transparent;
+    }
+    .display-container{
+        position: static;
+        width: 100%;
+        height: 400px;
+        min-height: 200px;
+        background-color:transparent;
+    }
+    .form-row > input{
+        width: 90%;
+    }
+    .form-row > button{
+        width: 95%;
+
+    }
+    img{
+        width: 250px;
+        left: 0;
+    }
+    .bookItem{
+        height: auto;
+    }
+    .preview{
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(4px);
+    }
+}
