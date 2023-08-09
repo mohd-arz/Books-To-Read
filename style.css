@@ -263,3 +263,8 @@ img{
         backdrop-filter: blur(4px);
     }
 }
+
+/* Input Invalid field */
+.invalid{
+    border:2px solid rgb(213, 101, 101);
+}

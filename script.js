@@ -26,21 +26,11 @@ function Book(title, author, pages) {
 
 addBookBtn.addEventListener("click", () => {
   if (
-    bookName.value !== "" &&
-    bookPages.value !== "" &&
-    authorName.value !== ""
+    bookName.validity.valid &&
+    bookPages.validity.valid &&
+    authorName.validity.valid
   ) {
     addBookToLibarary();
-  } else {
-    if (bookName.value === "") {
-      bookName.classList.add("invalid");
-    }
-    if (authorName.value === "") {
-      authorName.classList.add("invalid");
-    }
-    if (bookPages.value === "") {
-      bookPages.classList.add("invalid");
-    }
   }
 });
 
@@ -185,3 +175,16 @@ if (myLibarary.length !== 0) {
   preview.style.cssText = "display:none";
   displayContainer.style.cssText = "overflow-y: scroll ;";
 }
+
+// Simple JavaScript Constraints validation
+document.querySelector(".add-btn").addEventListener("click", () => {
+  document.querySelectorAll("input").forEach((item) => {
+    if (item.validity.valid === false) item.classList.add("invalid");
+  });
+});
+document.querySelectorAll("input").forEach((item) => {
+  item.addEventListener("input", () => {
+    if (item.validity.valid) item.classList.remove("invalid");
+    else item.classList.add("invalid");
+  });
+});
